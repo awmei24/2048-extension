@@ -1,0 +1,29 @@
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    width:200px;
+    text-align:center;
+}
+
+#board {
+    width:188px;
+    height:188px;
+    background-color:lightgrey;
+    border:2px solid grey;
+
+    margin:0 auto;
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.tile {
+    width:43px;
+    height:43px;
+    border:2px solid grey;
+
+    display:flex;
+
+    font-size:20px;
+    font-weight:bold;
+    justify-content:center;
+    align-items:center;
+}
