@@ -7,8 +7,8 @@ body {
 #board {
     width:188px;
     height:188px;
-    background-color:lightgrey;
-    border:2px solid grey;
+    background-color:whitesmoke;
+    border:2px solid #B9B9B9;
 
     margin:0 auto;
     display:flex;
@@ -18,12 +18,49 @@ body {
 .tile {
     width:43px;
     height:43px;
-    border:2px solid grey;
+    border:2px solid #B9B9B9;
 
     display:flex;
 
-    font-size:20px;
+    font-size:12px;
     font-weight:bold;
     justify-content:center;
     align-items:center;
+}
+
+.t1 {
+    background-color:#E4FFAA
+}
+.t2 {
+    background-color:#D6F9AC
+}
+.t4 {
+    background-color:#C8F3AE
+}
+.t8 {
+    background-color:#BBEDB0
+}
+.t16 {
+    background-color:#ADE7B2
+}
+.t32 {
+    background-color:#9FE1B4
+}
+.t64 {
+    background-color:#91DBB7
+}
+.t128 {
+    background-color:#83D5B9
+}
+.t256 {
+    background-color:#75CFBB
+}
+.t512 {
+    background-color:#68C9BD
+}
+.t1024 {
+    background-color:#5AC3BF
+}
+.t2048 {
+    background-color:#4CBDC1
 }
