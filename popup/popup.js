@@ -8,7 +8,7 @@ window.onload = function() {
 
 function startGame() {
     board = [ 
-        [0,0,0,0], 
+        [2,2,0,2], 
         [0,0,0,0], 
         [0,0,0,0], 
         [0,0,0,0], 
@@ -63,6 +63,33 @@ document.addEventListener("keyup", (ev) => {
     }
 })
 
+
+
+function slide(row) {
+    // remove zeroes
+    row = row.filter((elt) => elt != 0);
+
+    // slide
+    for (let r=(row.length-1); r>0; r--) {
+        if (row[r] == row[r+1]) {
+            row[r] *= 2;
+            row[r+1] = 0;
+
+            score += row[r];
+        };
+    };
+
+    // remove zeroes
+    row = row.filter((elt) => elt != 0);
+
+    // reinsert zeroes
+    while (row.length < 4) {
+        row.unshift(0);
+    };
+    return row;
+};
+
+
 function slideUp() {
     // edgy code
 }
@@ -76,5 +103,18 @@ function slideLeft() {
 }
 
 function slideRight() {
-    // edgy code
-}
+    // for each row, slide
+    for (let r=0; r<4; r++) {
+        row = board[r];
+        row = slide(row);
+        board[r] = row;
+        
+        // update tiles
+        for (let c=0; c<4; c++) {
+            tile = document.getElementById(r.toString() + c.toString());
+            newVal = board[r][c];
+            updateTile(tile, newVal);
+        };
+    };
+};
+
