@@ -29,38 +29,41 @@ body {
 }
 
 .t1 {
-    background-color:#E4FFAA
+    background-color:rgb(204 192 179)
 }
 .t2 {
-    background-color:#D6F9AC
+    background-color:rgb(238 228 218)
 }
 .t4 {
-    background-color:#C8F3AE
+    background-color:rgb(237 224 200)
 }
 .t8 {
-    background-color:#BBEDB0
+    background-color:rgb(242 177 121)
 }
 .t16 {
-    background-color:#ADE7B2
+    background-color:rgb(245 149 99)
 }
 .t32 {
-    background-color:#9FE1B4
+    background-color:rgb(246 124 95)
 }
 .t64 {
-    background-color:#91DBB7
+    background-color:rgb(246 94 59)
 }
 .t128 {
-    background-color:#83D5B9
+    background-color:rgb(237 207 114)
 }
 .t256 {
-    background-color:#75CFBB
+    background-color:rgb(237 204 97)
 }
 .t512 {
-    background-color:#68C9BD
+    background-color:rgb(237 200 80)
 }
 .t1024 {
-    background-color:#5AC3BF
+    background-color:rgb(237 197 63)
 }
 .t2048 {
-    background-color:#4CBDC1
+    background-color:rgb(237 194 46)
+}
+.t4096 {
+    background-color:black
 }
