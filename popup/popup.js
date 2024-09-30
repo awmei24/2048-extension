@@ -70,7 +70,7 @@ function randTwo() {
             valString = val.toString()
             tile = document.getElementById(randRow.toString() + randCol.toString());
             tile.innerText = valString
-            tile.classList.add('t' + valString);
+            tile.classList.add("t" + valString);
             needNew = false
         }
     }
@@ -108,7 +108,7 @@ document.addEventListener("keyup", (ev) => {
         slideRight();
         randTwo();
     } 
-    document.getElementsByTagName('score').innerText = score
+    document.getElementsByTagName("score").innerText = score
 })
 
 function slide(row) {
