@@ -8,10 +8,10 @@ window.onload = function() {
 
 function startGame() {
     board = [ 
-        [2,2,0,2], 
-        [0,0,4,8], 
-        [0,8,0,8], 
-        [2,2,4,4], 
+        [0,0,0,0], 
+        [0,0,0,0], 
+        [0,0,0,0], 
+        [0,0,0,0], 
     ]
 
     // create tile with id 'rc' for each tile at start
@@ -28,8 +28,53 @@ function startGame() {
             document.getElementById("board").append(tile)
         }
     }
+    randTwo(); 
+    randTwo();
 }
 
+function hasEmptyTile() {
+    for (let r=0; r<4; r++) {
+        for (let c=0; c<4; c++) {
+            if (board[r][c] == 0){
+                return true; 
+            }
+        }
+    }
+    return false;
+}
+
+function randTwo() {
+    if (!hasEmptyTile()) {
+        return;
+    }
+
+    // is needed?
+    needNew = true; 
+    
+    let randRow = Math.floor(Math.random() * 4);
+    let randCol = Math.floor(Math.random() * 4);
+
+    let randFour = Math.random()
+
+    // if not another number
+    while (needNew) {
+        if (board[randRow][randCol] == 0) {
+            val = 2; 
+
+            if (randFour < 0.05) {
+                val = 4;
+            }
+
+            board[randRow][randCol] = val
+            
+            valString = val.toString()
+            tile = document.getElementById(randRow.toString() + randCol.toString());
+            tile.innerText = valString
+            tile.classList.add('t' + valString);
+            needNew = false
+        }
+    }
+}
 function updateTile(tile, val) {
 
     // reset tile
@@ -52,15 +97,18 @@ function updateTile(tile, val) {
 document.addEventListener("keyup", (ev) => {
     if (ev.code == "ArrowUp") {
         slideUp();
+        randTwo();
     } else if (ev.code == "ArrowDown") {
         slideDown();
+        randTwo();
     } else if (ev.code == "ArrowLeft") {
         slideLeft();
+        randTwo();
     } else if (ev.code == "ArrowRight") {
         slideRight();
-    } else {
-        return
-    }
+        randTwo();
+    } 
+    document.getElementsByTagName('score').innerText = score
 })
 
 function slide(row) {
